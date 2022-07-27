@@ -1,12 +1,13 @@
 <template>
-  <div class="product-list">
-    <div class="card" v-for="product in products" :style="{width: cardsWidth + '%'}">
+  <div class="product-list"> <!-- В данном случае, вместо div лучше использовать тег ul и li -->
+    <div class="card" v-for="product in products" :style="{width: cardsWidth + '%'}"> <!-- Лучше добавить директиву :key там, где используется директива v-for,
+     вместо :style лучше использовать медиа-запросы @media -->
       <p class="card-title">{{ product.title }}</p>
-      <img class="card-image" :src="product.image" alt="">
+      <img class="card-image" :src="product.image" alt=""> <!-- Не заполнен alt -->
       <p class="card-price">Цена: {{ product.price }} {{ currency }}</p>
 
       <div>
-        <input type="number" ref="amount" :id="product.id">
+        <input type="number" ref="amount" :id="product.id"> <!-- id здесь не нужен -->
         <span>кг</span>
       </div>
 
@@ -22,11 +23,11 @@ export default {
   },
   data() {
     return {
-      products: [],
+      products: [], <!-- данный массив должен быть в store -->
     };
   },
   computed: {
-    cardsWidth() {
+    cardsWidth() { <!-- адаптив лучше делать через медиа-запросы @media -->
       let width = window.innerWidth;
       let count = 1;
       if (width > '840px') {
@@ -43,7 +44,7 @@ export default {
       setInterval(this.getList, 1000);
     },
     async getList() {
-      let data = await this.$store.dispatch('getProductsList');
+      let data = await this.$store.dispatch('getProductsList'); <!-- Лучше сразу присваивать правую часть к this.products -->
 
       this.products = data;
     },
@@ -84,5 +85,5 @@ export default {
     padding: 5px;
     margin: 5px;
   }
-
+/*Лучше тегу button назначить класс и обращаться по классу*/
 </style>

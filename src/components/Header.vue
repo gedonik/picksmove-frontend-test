@@ -13,9 +13,9 @@ export default {
       cartPrice: 0,
     };
   },
-  watch: {
+  watch: { <!-- В данном случае лучше использовать computed вместо watch, так как значение вычисляется -->
     cart(cart) {
-      let val = 0;
+      let val = 0; <!-- Избыточный код, ненужная переменная, можно сразу ссылаться на this.cartPrice -->
       cart.forEach((item) => {
         val += item.price * item.amount;
       });
@@ -32,7 +32,7 @@ export default {
   }
 </style>
 
-<template>
+<template> <!-- Должен быть на верху страницы -->
   <div class="header">
     <h3>Товаров в корзине на: {{ cartPrice }} {{ currency }}</h3>
   </div>

@@ -2,7 +2,7 @@ const SLEEP_TIME = 200;
 function sleep(fn) {
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve(fn());
+      resolve(fn()); <!-- resolve указан, а reject - нет -->
     }, SLEEP_TIME);
   });
 }
@@ -11,7 +11,7 @@ const dataService = {
   getProductsList() {
     let products = [
       {
-        id: 'potato',
+        id: 'potato', <!-- id не корректный, во первых язык не английский, во-вторых может быть несколько картошек и будет ошибка -->
         title: 'Картошка',
         price: 49.99,
         image: '/products/potato.jpg',

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Header :cart="cart" :currency="currency"></Header>
-    <List :currency="currency"/>
+    <Header :cart="cart" :currency="currency"></Header><!-- Закрывающий тег лишний, учитывая что остальные компоненты без него -->
+    <List :currency="currency"/><!-- Если используется store, передавать пропсы не нужно таким образом -->
     <Cart :cart="cart"/>
   </div>
 </template>
@@ -20,7 +20,7 @@ export default {
     };
   },
   components: {
-    Header,
+    Header, <!-- Перечень компонентов лучше писать в строчку -->
     List,
     Cart,
   },
@@ -33,6 +33,7 @@ export default {
   padding: 0;
   box-sizing: border-box;
 }
+/*Сброс стилей лучше писать в отдельном файле*/
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -41,4 +42,5 @@ export default {
 
   color: #2c3e50;
 }
+/*Шрифты лучше подключать отдельно и использовать конкретный шрифт, а не список*/
 </style>
