@@ -1,29 +1,30 @@
 const SLEEP_TIME = 200;
+
 function sleep(fn) {
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve(fn()); <!-- resolve указан, а reject - нет -->
+      resolve(fn());
     }, SLEEP_TIME);
   });
 }
 
 const dataService = {
   getProductsList() {
-    let products = [
+    const products = [
       {
-        id: 'potato', <!-- id не корректный, во первых язык не английский, во-вторых может быть несколько картошек и будет ошибка -->
+        id: '12367',
         title: 'Картошка',
         price: 49.99,
         image: '/products/potato.jpg',
       },
       {
-        id: 'carrot',
+        id: '45',
         title: 'Морковка',
         price: 55.00,
         image: '/products/carrot.jpg',
       },
       {
-        id: 'cabbage',
+        id: '34545',
         title: 'Капуста',
         price: 28.50,
         image: '/products/cabbage.jpg',
@@ -38,4 +39,5 @@ const productsApi = {
     return sleep(dataService.getProductsList);
   },
 };
+
 export default productsApi;
