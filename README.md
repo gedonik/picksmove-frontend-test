@@ -54,5 +54,5 @@ HTML, CSS, SCSS, Vue, Vuex, Axios.
 
 ## Screenshots
 
-![App Screenshot](https://i.postimg.cc/2Sn8xMTD/SCID.jpg)
+![App Screenshot](https://i.postimg.cc/FFVCt2XD/picksmove-frontend-test.jpg)
 
