@@ -29,5 +29,30 @@
     
 - Список продуктов находящихся в корзине
     - Реализовать в виде списка, упорядоченного в порядке, обратном добавлению. (Последний - вверху, первый - внизу)
-    
+
+## Installation
+
+Clone my project, choose branch and type in terminal:
+
+```bash
+  npm install 
+  npm run serve
+```
+
+It could be useful in case chokidar error: 
+
+```bash
+  npm i -g npm
+  npm cache verify
+  npm i -D chokidar
+  npm i
+```
+
+## Tech Stack
+
+HTML, CSS, SCSS, Vue, Vuex, Axios.
+
+## Screenshots
+
+![App Screenshot](https://i.postimg.cc/2Sn8xMTD/SCID.jpg)
 
